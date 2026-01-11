@@ -1,0 +1,405 @@
+/**
+ * 45BLACK DESIGN TOKENS — Saville Edition
+ *
+ * Inspired by Peter Saville's work for Factory Records and Haçienda.
+ * Geometric precision meets emotional resonance.
+ * Typography as architecture.
+ * Colour as information, not decoration.
+ *
+ * @version 1.0
+ * @author 45Black Limited
+ */
+
+/* ==========================================================================
+   COLOUR TOKENS
+   ========================================================================== */
+
+:root {
+  /* -------------------------------------------------------------------------
+     Saville Signature Palette (Primary / Home Strip)
+
+     Order matters: This is the Code Bar sequence.
+     Green → Teal → Blue → Purple → Coral → Orange
+     ------------------------------------------------------------------------- */
+
+  /* Forest Green — Growth, sustainability, success */
+  --saville-green: #4A7C59;
+  --saville-green-rgb: 74, 124, 89;
+
+  /* Deep Teal — Trust, professionalism, stability */
+  --saville-teal: #2E8B8B;
+  --saville-teal-rgb: 46, 139, 139;
+
+  /* Saville Blue — Primary brand, authority, expertise */
+  --saville-blue: #1565C0;
+  --saville-blue-rgb: 21, 101, 192;
+
+  /* Royal Purple — Innovation, creativity, distinction */
+  --saville-purple: #7B1FA2;
+  --saville-purple-rgb: 123, 31, 162;
+
+  /* Burnt Coral — Energy, action, urgency */
+  --saville-coral: #E65100;
+  --saville-coral-rgb: 230, 81, 0;
+
+  /* Warm Orange — Optimism, accessibility, warmth */
+  --saville-orange: #F57C00;
+  --saville-orange-rgb: 245, 124, 0;
+
+  /* -------------------------------------------------------------------------
+     Away Strip Palette (Secondary)
+     ------------------------------------------------------------------------- */
+
+  /* Mist Grey — Subtle backgrounds, disabled states */
+  --away-grey: #E0E0E0;
+  --away-grey-rgb: 224, 224, 224;
+
+  /* Slate Blue — Secondary accent, links */
+  --away-slate: #5C6BC0;
+  --away-slate-rgb: 92, 107, 192;
+
+  /* Dusty Rose — Soft accent, notifications */
+  --away-rose: #D48CA1;
+  --away-rose-rgb: 212, 140, 161;
+
+  /* Sage Green — Success states, positive feedback */
+  --away-sage: #81C784;
+  --away-sage-rgb: 129, 199, 132;
+
+  /* Soft Gold — Haçienda Yellow, warnings, highlights */
+  --away-gold: #FFD54F;
+  --away-gold-rgb: 255, 213, 79;
+
+  /* Charcoal — Dark text on light, secondary dark */
+  --away-charcoal: #424242;
+  --away-charcoal-rgb: 66, 66, 66;
+
+  /* -------------------------------------------------------------------------
+     Background System
+     ------------------------------------------------------------------------- */
+
+  /* Dark Mode (Primary) */
+  --bg-dark-primary: #1A1A1A;
+  --bg-dark-secondary: #2D2D2D;
+  --bg-dark-elevated: #3D3D3D;
+  --bg-dark-overlay: rgba(0, 0, 0, 0.7);
+
+  /* Light Mode */
+  --bg-light-primary: #FAFAFA;
+  --bg-light-secondary: #F5F5F5;
+  --bg-light-elevated: #FFFFFF;
+  --bg-light-accent: #FFF8F0;
+
+  /* -------------------------------------------------------------------------
+     Semantic Colours
+     ------------------------------------------------------------------------- */
+
+  /* Interactive */
+  --color-primary: var(--saville-blue);
+  --color-primary-hover: #1976D2;
+  --color-primary-active: #0D47A1;
+
+  /* States */
+  --color-success: var(--away-sage);
+  --color-warning: var(--away-gold);
+  --color-error: var(--saville-coral);
+  --color-info: var(--saville-teal);
+
+  /* Text */
+  --text-primary-dark: #FFFFFF;
+  --text-secondary-dark: rgba(255, 255, 255, 0.7);
+  --text-muted-dark: rgba(255, 255, 255, 0.5);
+
+  --text-primary-light: var(--away-charcoal);
+  --text-secondary-light: #757575;
+  --text-muted-light: #9E9E9E;
+
+  /* -------------------------------------------------------------------------
+     Code Bar Gradient (for subtle branding moments)
+     ------------------------------------------------------------------------- */
+
+  --code-bar-gradient: linear-gradient(
+    90deg,
+    var(--saville-green) 0%,
+    var(--saville-green) 16.66%,
+    var(--saville-teal) 16.66%,
+    var(--saville-teal) 33.33%,
+    var(--saville-blue) 33.33%,
+    var(--saville-blue) 50%,
+    var(--saville-purple) 50%,
+    var(--saville-purple) 66.66%,
+    var(--saville-coral) 66.66%,
+    var(--saville-coral) 83.33%,
+    var(--saville-orange) 83.33%,
+    var(--saville-orange) 100%
+  );
+}
+
+/* ==========================================================================
+   TYPOGRAPHY TOKENS
+
+   IBM Plex — Echoes Saville's love of Helvetica/Futura
+   with contemporary edge and excellent code support.
+   ========================================================================== */
+
+:root {
+  /* Font Families */
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Fira Code', monospace;
+
+  /* Font Weights */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Type Scale (modular, 1.25 ratio) */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+
+/* ==========================================================================
+   SPACING TOKENS
+
+   8px base unit, Saville's grid precision.
+   ========================================================================== */
+
+:root {
+  --space-0: 0;
+  --space-1: 0.25rem;      /* 4px */
+  --space-2: 0.5rem;       /* 8px — base unit */
+  --space-3: 0.75rem;      /* 12px */
+  --space-4: 1rem;         /* 16px */
+  --space-5: 1.25rem;      /* 20px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-8: 2rem;         /* 32px */
+  --space-10: 2.5rem;      /* 40px */
+  --space-12: 3rem;        /* 48px */
+  --space-16: 4rem;        /* 64px */
+  --space-20: 5rem;        /* 80px */
+  --space-24: 6rem;        /* 96px */
+}
+
+/* ==========================================================================
+   BORDER TOKENS
+   ========================================================================== */
+
+:root {
+  /* Border Widths */
+  --border-0: 0;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-4: 4px;
+
+  /* Border Radius — Geometric, not rounded */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+
+  /* Border Colours */
+  --border-dark: rgba(255, 255, 255, 0.1);
+  --border-dark-strong: rgba(255, 255, 255, 0.2);
+  --border-light: rgba(0, 0, 0, 0.1);
+  --border-light-strong: rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   SHADOW TOKENS
+
+   Subtle, precise — not neon glows.
+   ========================================================================== */
+
+:root {
+  /* Elevation Shadows (Dark Mode) */
+  --shadow-sm-dark: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md-dark: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-lg-dark: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-xl-dark: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+  /* Elevation Shadows (Light Mode) */
+  --shadow-sm-light: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-xl-light: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* Focus Ring — Saville Blue */
+  --ring-focus: 0 0 0 2px var(--saville-blue);
+  --ring-focus-offset: 0 0 0 4px var(--bg-dark-primary);
+}
+
+/* ==========================================================================
+   ANIMATION TOKENS
+
+   Precise micro-interactions, not glow pulses.
+   ========================================================================== */
+
+:root {
+  /* Durations */
+  --duration-instant: 0ms;
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+  /* Easing */
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Transitions */
+  --transition-colors: color var(--duration-normal) var(--ease-in-out),
+                       background-color var(--duration-normal) var(--ease-in-out),
+                       border-color var(--duration-normal) var(--ease-in-out);
+  --transition-transform: transform var(--duration-normal) var(--ease-out);
+  --transition-opacity: opacity var(--duration-normal) var(--ease-in-out);
+  --transition-all: all var(--duration-normal) var(--ease-in-out);
+}
+
+/* ==========================================================================
+   Z-INDEX SCALE
+   ========================================================================== */
+
+:root {
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+}
+
+/* ==========================================================================
+   COMPONENT TOKENS
+   ========================================================================== */
+
+:root {
+  /* Buttons */
+  --btn-height-sm: 2rem;       /* 32px */
+  --btn-height-md: 2.5rem;     /* 40px */
+  --btn-height-lg: 3rem;       /* 48px */
+  --btn-padding-x: var(--space-4);
+  --btn-radius: var(--radius-md);
+
+  /* Cards */
+  --card-padding: var(--space-6);
+  --card-radius: var(--radius-lg);
+  --card-border: var(--border-1) solid var(--border-dark);
+
+  /* Inputs */
+  --input-height: 2.5rem;      /* 40px */
+  --input-padding-x: var(--space-3);
+  --input-radius: var(--radius-md);
+  --input-border: var(--border-1) solid var(--border-dark-strong);
+
+  /* Navigation */
+  --nav-height: 4rem;          /* 64px */
+  --sidebar-width: 16rem;      /* 256px */
+  --sidebar-collapsed: 4rem;   /* 64px */
+}
+
+/* ==========================================================================
+   CODE BAR UTILITY CLASS
+
+   Use sparingly — only on specific branding moments.
+   ========================================================================== */
+
+.code-bar {
+  height: 4px;
+  background: var(--code-bar-gradient);
+}
+
+.code-bar--thin {
+  height: 2px;
+}
+
+.code-bar--thick {
+  height: 6px;
+}
+
+/* ==========================================================================
+   FAC NUMBERING
+
+   Factory Records catalogue number aesthetic.
+   Use for version numbers, IDs, indices.
+   ========================================================================== */
+
+.fac-number {
+  font-family: var(--font-mono);
+  font-weight: var(--font-medium);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--text-muted-dark);
+}
+
+/* ==========================================================================
+   THEME SWITCHING
+   ========================================================================== */
+
+/* Light Mode Overrides */
+[data-theme="light"] {
+  --bg-primary: var(--bg-light-primary);
+  --bg-secondary: var(--bg-light-secondary);
+  --bg-elevated: var(--bg-light-elevated);
+
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --text-muted: var(--text-muted-light);
+
+  --border-color: var(--border-light);
+  --border-color-strong: var(--border-light-strong);
+
+  --shadow-sm: var(--shadow-sm-light);
+  --shadow-md: var(--shadow-md-light);
+  --shadow-lg: var(--shadow-lg-light);
+  --shadow-xl: var(--shadow-xl-light);
+}
+
+/* Dark Mode (Default) */
+[data-theme="dark"],
+:root {
+  --bg-primary: var(--bg-dark-primary);
+  --bg-secondary: var(--bg-dark-secondary);
+  --bg-elevated: var(--bg-dark-elevated);
+
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --text-muted: var(--text-muted-dark);
+
+  --border-color: var(--border-dark);
+  --border-color-strong: var(--border-dark-strong);
+
+  --shadow-sm: var(--shadow-sm-dark);
+  --shadow-md: var(--shadow-md-dark);
+  --shadow-lg: var(--shadow-lg-dark);
+  --shadow-xl: var(--shadow-xl-dark);
+}

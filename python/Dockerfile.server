@@ -13,10 +13,10 @@ RUN apt-get update && apt-get install -y \
 COPY pyproject.toml .
 
 # Install server dependencies to a virtual environment using uv
-# Install base dependencies (includes structlog) and server groups
+# Install base dependencies and include agents group for ResearchAgent support
 RUN uv venv /venv && \
     . /venv/bin/activate && \
-    uv pip install . --group server --group server-reranking
+    uv pip install . --group server --group server-reranking --group agents
 
 # Runtime stage
 FROM python:3.12-slim
@@ -57,8 +57,9 @@ ENV PATH=/venv/bin:$PATH
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 RUN playwright install chromium
 
-# Copy server code, agent work orders, and tests
+# Copy server code, agents, agent work orders, and tests
 COPY src/server/ src/server/
+COPY src/agents/ src/agents/
 COPY src/agent_work_orders/ src/agent_work_orders/
 COPY src/__init__.py src/
 COPY tests/ tests/

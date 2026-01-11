@@ -1,60 +1,159 @@
+/**
+ * 45BLACK UI — Saville Edition
+ *
+ * Inspired by Peter Saville's work for Factory Records and Haçienda.
+ * Geometric precision meets emotional resonance.
+ */
+
 @import "tailwindcss";
+@import "./styles/saville-tokens.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  /* Light mode variables - bare HSL values (Tailwind adds hsl() wrapper) */
-  --background: 0 0% 98%;
-  --foreground: 240 10% 3.9%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
-  --border: 240 5.9% 90%;
-  --input: 240 5.9% 90%;
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
-  --primary: 271 91% 65%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-  --accent: 271 91% 65%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --ring: 240 5.9% 10%;
-  --radius: 0.5rem;
+/* ==========================================================================
+   IBM PLEX FONT IMPORTS
+   ========================================================================== */
 
-  /* Tron accent colors */
-  --purple-accent: 271 91% 65%;
-  --green-accent: 160 84% 39%;
-  --pink-accent: 330 90% 65%;
-  --blue-accent: 217 91% 60%;
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ibmplexsans/v19/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIxsdP3pBms.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ibmplexsans/v19/zYXgKVElMYYaJe8bpLHnCwDKhdHeFaxOedc.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ibmplexsans/v19/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIxsdP3pBms.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ibmplexsans/v19/zYX9KVElMYYaJe8bpLHnCwDKjQ76AIxsdP3pBms.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ibmplexsans/v19/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIxsdP3pBms.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ibmplexmono/v19/-F63fjptAgt5VM-kVkqdyU8n5igg1l9kn-s.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/ibmplexmono/v19/-F6qfjptAgt5VM-kVkqdyU8n3twJwl1FgsAXHNlYzg.woff2') format('woff2');
+}
+
+/* ==========================================================================
+   THEME VARIABLES — 45Black Saville Palette
+   ========================================================================== */
+
+:root {
+  /* Light mode variables - HSL values for Tailwind */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 26%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 46%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 26%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 26%;
+
+  /* Saville Blue as primary */
+  --primary: 211 80% 42%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Mist Grey as secondary */
+  --secondary: 0 0% 88%;
+  --secondary-foreground: 0 0% 26%;
+
+  /* Royal Purple as accent */
+  --accent: 289 69% 41%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Burnt Coral as destructive */
+  --destructive: 21 100% 45%;
+  --destructive-foreground: 0 0% 100%;
+
+  --ring: 211 80% 42%;
+  --radius: 0.25rem;
+
+  /* 45Black Saville Palette */
+  --saville-green: 141 25% 39%;
+  --saville-teal: 180 50% 36%;
+  --saville-blue: 211 80% 42%;
+  --saville-purple: 289 69% 41%;
+  --saville-coral: 21 100% 45%;
+  --saville-orange: 27 91% 48%;
+
+  /* Away Strip */
+  --away-grey: 0 0% 88%;
+  --away-slate: 232 36% 55%;
+  --away-rose: 345 44% 69%;
+  --away-sage: 123 38% 64%;
+  --away-gold: 45 100% 66%;
 
   color-scheme: light;
 }
 
 .dark {
-  /* Dark mode variables - bare HSL values */
-  --background: 0 0% 0%;
+  /* Dark mode variables */
+  --background: 0 0% 10%;
   --foreground: 0 0% 100%;
-  --muted: 240 4% 16%;
-  --muted-foreground: 240 5% 65%;
-  --popover: 0 0% 0%;
+  --muted: 0 0% 18%;
+  --muted-foreground: 0 0% 65%;
+  --popover: 0 0% 10%;
   --popover-foreground: 0 0% 100%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --card: 0 0% 0%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --card: 0 0% 14%;
   --card-foreground: 0 0% 100%;
-  --primary: 271 91% 65%;
+
+  /* Saville Blue as primary (slightly lighter in dark) */
+  --primary: 211 80% 50%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 240 3.7% 15.9%;
+
+  /* Dark secondary */
+  --secondary: 0 0% 18%;
   --secondary-foreground: 0 0% 98%;
-  --accent: 271 91% 65%;
+
+  /* Royal Purple as accent */
+  --accent: 289 69% 50%;
   --accent-foreground: 0 0% 100%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 98%;
-  --ring: 240 3.7% 15.9%;
+
+  /* Burnt Coral as destructive */
+  --destructive: 21 100% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --ring: 211 80% 50%;
 
   color-scheme: dark;
 }
@@ -80,13 +179,20 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
 
-  /* Border radius */
+  /* Border radius - geometric, minimal */
   --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-sm: calc(var(--radius) - 2px);
+
+  /* Font families */
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Fira Code', monospace;
 }
 
-/* Animations - defined outside @theme */
+/* ==========================================================================
+   ANIMATIONS — Precise, not flashy
+   ========================================================================== */
+
 @keyframes caret-blink {
   0%, 70%, 100% { opacity: 1; }
   20%, 50% { opacity: 0; }
@@ -106,33 +212,103 @@
   100% { transform: translateX(100%); }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
 @layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, kbd, samp {
+    font-family: var(--font-mono);
+  }
+
+  /* FAC numbering style for version numbers, IDs */
+  .fac-number {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    @apply text-muted-foreground;
   }
 }
+
+/* ==========================================================================
+   COMPONENT STYLES — Saville Edition
+   ========================================================================== */
 
 @layer components {
-  /* Grid pattern for background (used in MainLayout) */
-  .neon-grid {
+  /* Subtle structural grid - invisible but present */
+  .saville-grid {
     background-image:
-      linear-gradient(to right, #a855f720 1px, transparent 1px),
-      linear-gradient(to bottom, #a855f720 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.3;
   }
 
-  .dark .neon-grid {
-    background-image:
-      linear-gradient(to right, #a855f730 1px, transparent 1px),
-      linear-gradient(to bottom, #a855f730 1px, transparent 1px);
+  /* Code bar - 45Black signature element */
+  .code-bar {
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--saville-green)) 0%,
+      hsl(var(--saville-green)) 16.66%,
+      hsl(var(--saville-teal)) 16.66%,
+      hsl(var(--saville-teal)) 33.33%,
+      hsl(var(--saville-blue)) 33.33%,
+      hsl(var(--saville-blue)) 50%,
+      hsl(var(--saville-purple)) 50%,
+      hsl(var(--saville-purple)) 66.66%,
+      hsl(var(--saville-coral)) 66.66%,
+      hsl(var(--saville-coral)) 83.33%,
+      hsl(var(--saville-orange)) 83.33%,
+      hsl(var(--saville-orange)) 100%
+    );
+  }
+
+  .code-bar--thin {
+    height: 2px;
+  }
+
+  .code-bar--thick {
+    height: 6px;
+  }
+
+  /* Legacy neon-grid class - maps to saville-grid for compatibility */
+  .neon-grid {
+    @apply saville-grid;
   }
 }
 
-/* Hide scrollbar but keep scroll functionality */
+/* ==========================================================================
+   SCROLLBAR STYLES — Clean, minimal
+   ========================================================================== */
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -142,42 +318,10 @@
   display: none;
 }
 
-/* Animation delays (checked for usage) */
-.animation-delay-150 {
-  animation-delay: 150ms;
-}
-.animation-delay-300 {
-  animation-delay: 300ms;
-}
-
-/* Pulse glow animation (used in GlassCrawlDepthSelector) */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow:
-      0 0 20px 10px hsl(var(--blue-accent) / 0.50),
-      0 0 40px 20px hsl(var(--blue-accent) / 0.30);
-  }
-  50% {
-    box-shadow:
-      0 0 30px 15px hsl(var(--blue-accent) / 0.70),
-      0 0 60px 30px hsl(var(--blue-accent) / 0.40);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-pulse-glow {
-    animation: none !important;
-  }
-}
-
-/* Custom scrollbar styles (used in multiple components) */
+/* Custom scrollbar - Saville style */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--blue-accent) / 0.30) transparent;
+  scrollbar-color: hsl(var(--saville-blue) / 0.3) transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -189,31 +333,31 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--blue-accent) / 0.30);
+  background-color: hsl(var(--saville-blue) / 0.3);
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(var(--blue-accent) / 0.50);
+  background-color: hsl(var(--saville-blue) / 0.5);
 }
 
 .dark .custom-scrollbar {
-  scrollbar-color: hsl(var(--blue-accent) / 0.45) transparent;
+  scrollbar-color: hsl(var(--saville-blue) / 0.4) transparent;
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--blue-accent) / 0.40);
+  background-color: hsl(var(--saville-blue) / 0.4);
 }
 
 .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(var(--blue-accent) / 0.60);
+  background-color: hsl(var(--saville-blue) / 0.6);
 }
 
-/* Thin scrollbar styles (used in KanbanColumn and other components) - Tron-themed */
+/* Thin scrollbar variant */
 .scrollbar-thin {
   scrollbar-width: thin;
-  scrollbar-color: hsl(var(--blue-accent) / 0.40) transparent;
+  scrollbar-color: hsl(var(--border)) transparent;
 }
 
 .scrollbar-thin::-webkit-scrollbar {
@@ -226,47 +370,70 @@
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    to bottom,
-    hsl(var(--blue-accent) / 0.60),
-    hsl(var(--blue-accent) / 0.30)
-  );
+  background: hsl(var(--muted-foreground) / 0.3);
   border-radius: 3px;
-  box-shadow: 0 0 3px hsl(var(--blue-accent) / 0.40);
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    to bottom,
-    hsl(var(--blue-accent) / 0.80),
-    hsl(var(--blue-accent) / 0.50)
-  );
-  box-shadow:
-    0 0 6px hsl(var(--blue-accent) / 0.60),
-    inset 0 0 3px hsl(var(--blue-accent) / 0.30);
+  background: hsl(var(--muted-foreground) / 0.5);
 }
 
-.dark .scrollbar-thin {
-  scrollbar-color: hsl(var(--blue-accent) / 0.50) transparent;
+/* ==========================================================================
+   ANIMATION UTILITIES
+   ========================================================================== */
+
+.animation-delay-150 {
+  animation-delay: 150ms;
 }
 
-.dark .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    to bottom,
-    hsl(var(--blue-accent) / 0.50),
-    hsl(var(--blue-accent) / 0.20)
-  );
-  box-shadow: 0 0 4px hsl(var(--blue-accent) / 0.50);
+.animation-delay-300 {
+  animation-delay: 300ms;
 }
 
-.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    to bottom,
-    hsl(var(--blue-accent) / 0.70),
-    hsl(var(--blue-accent) / 0.40)
-  );
-  box-shadow:
-    0 0 8px hsl(var(--blue-accent) / 0.70),
-    inset 0 0 3px hsl(var(--blue-accent) / 0.40);
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   FOCUS STATES — Precise ring
+   ========================================================================== */
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+}
+
+/* ==========================================================================
+   LEGACY COMPATIBILITY
+   Keep pulse-glow for any components still using it during transition
+   ========================================================================== */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px 10px hsl(var(--saville-blue) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px 15px hsl(var(--saville-blue) / 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-glow {
+    animation: none !important;
+  }
 }

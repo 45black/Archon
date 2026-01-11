@@ -531,6 +531,23 @@ def register_modules():
         logger.error(f"✗ Failed to register feature tools: {e}")
         logger.error(traceback.format_exc())
 
+    # Research Agent Tools
+    try:
+        from src.mcp_server.features.research import register_research_tools
+
+        register_research_tools(mcp)
+        modules_registered += 1
+        logger.info("✓ Research tools registered")
+    except ImportError as e:
+        logger.warning(f"⚠ Research tools module not available (optional): {e}")
+    except (SyntaxError, NameError, AttributeError) as e:
+        logger.error(f"✗ Code error in research tools - MUST FIX: {e}")
+        logger.error(traceback.format_exc())
+        raise
+    except Exception as e:
+        logger.error(f"✗ Failed to register research tools: {e}")
+        logger.error(traceback.format_exc())
+
     logger.info(f"📦 Total modules registered: {modules_registered}")
 
     if modules_registered == 0:

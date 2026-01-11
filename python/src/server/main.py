@@ -31,6 +31,7 @@ from .api_routes.pages_api import router as pages_router
 from .api_routes.progress_api import router as progress_router
 from .api_routes.projects_api import router as projects_router
 from .api_routes.providers_api import router as providers_router
+from .api_routes.research_api import router as research_router
 from .api_routes.version_api import router as version_router
 
 # Import modular API routers
@@ -196,6 +197,7 @@ app.include_router(agent_work_orders_router)  # Proxy to independent agent work 
 app.include_router(internal_router)
 app.include_router(bug_report_router)
 app.include_router(providers_router)
+app.include_router(research_router)
 app.include_router(version_router)
 app.include_router(migration_router)
 

@@ -12,5 +12,6 @@ All agents are built using PydanticAI for type safety and structured outputs.
 
 from .base_agent import BaseAgent
 from .document_agent import DocumentAgent
+from .research_agent import ResearchAgent
 
-__all__ = ["BaseAgent", "DocumentAgent"]
+__all__ = ["BaseAgent", "DocumentAgent", "ResearchAgent"]

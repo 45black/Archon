@@ -1,0 +1,14 @@
+# Ralph runtime directories (contain session-specific data)
+audit/
+adversarial/
+archive/
+
+# Session state files
+progress.txt
+current-feature.txt
+feature-config.txt
+
+# Keep the directory structure
+!audit/.gitkeep
+!adversarial/.gitkeep
+!archive/.gitkeep

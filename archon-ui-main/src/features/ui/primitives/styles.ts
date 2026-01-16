@@ -227,6 +227,22 @@ export const solidCard = {
       border: "border-away-gold/30",
       bg: "bg-away-gold/5 dark:bg-away-gold/10",
     },
+    // Legacy colour mappings for DataCard compatibility
+    cyan: {
+      solid: "bg-saville-teal",
+      border: "border-saville-teal/30",
+      bg: "bg-saville-teal/5 dark:bg-saville-teal/10",
+    },
+    pink: {
+      solid: "bg-saville-purple",
+      border: "border-saville-purple/30",
+      bg: "bg-saville-purple/5 dark:bg-saville-purple/10",
+    },
+    red: {
+      solid: "bg-saville-coral",
+      border: "border-saville-coral/30",
+      bg: "bg-saville-coral/5 dark:bg-saville-coral/10",
+    },
   },
 
   // Size variants

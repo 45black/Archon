@@ -299,9 +299,13 @@
     height: 6px;
   }
 
-  /* Legacy neon-grid class - maps to saville-grid for compatibility */
+  /* Legacy neon-grid class - duplicates saville-grid for compatibility */
   .neon-grid {
-    @apply saville-grid;
+    background-image:
+      linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.3;
   }
 }
 

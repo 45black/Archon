@@ -1,0 +1,173 @@
+{
+  "name": "Pensions Governance & Legal AI Knowledge Sources",
+  "description": "Curated sources for 45Black pensions governance knowledge base - identified 2026-01-15",
+  "created_by": "Claude Code investigation of Stanford GitLab (redirected to higher-value targets)",
+  "categories": [
+    {
+      "name": "Legal AI & Computational Law",
+      "priority": "high",
+      "sources": [
+        {
+          "url": "https://law.stanford.edu/codex-the-stanford-center-for-legal-informatics/",
+          "name": "Stanford CodeX",
+          "description": "Stanford Center for Legal Informatics - computational law, AI governance, legal analytics",
+          "crawl_depth": 2,
+          "tags": ["computational-law", "ai-governance", "legal-informatics"]
+        },
+        {
+          "url": "https://computationallaw.org/",
+          "name": "Computational Law Foundation",
+          "description": "AI Agents x Law workshop resources, contract-to-code frameworks",
+          "crawl_depth": 2,
+          "tags": ["ai-agents", "legal-frameworks", "authenticated-delegation"]
+        }
+      ]
+    },
+    {
+      "name": "UK Pensions Regulatory",
+      "priority": "high",
+      "sources": [
+        {
+          "url": "https://www.thepensionsregulator.gov.uk/en/document-library/corporate-information/ddat-strategy",
+          "name": "TPR DDaT Strategy",
+          "description": "TPR Digital, Data and Technology Strategy (Oct 2024) - AI initiatives, data standards",
+          "crawl_depth": 1,
+          "tags": ["tpr", "digital-strategy", "ai-governance", "uk-pensions"]
+        },
+        {
+          "url": "https://www.thepensionsregulator.gov.uk/en/document-library/corporate-information/tpr-data-strategy",
+          "name": "TPR Data Strategy",
+          "description": "TPR Data Strategy (March 2025) - data standardisation, regulatory sandbox",
+          "crawl_depth": 1,
+          "tags": ["tpr", "data-strategy", "uk-pensions"]
+        },
+        {
+          "url": "https://trusteetoolkit.thepensionsregulator.gov.uk/",
+          "name": "TPR Trustee Toolkit",
+          "description": "Official TPR trustee training and guidance resources",
+          "crawl_depth": 3,
+          "tags": ["tpr", "trustee-training", "governance"]
+        }
+      ]
+    },
+    {
+      "name": "Legal Ontologies & Knowledge Graphs",
+      "priority": "high",
+      "sources": [
+        {
+          "url": "https://finregont.com/",
+          "name": "FinRegOnt",
+          "description": "Financial Regulation Ontology - FIBO + LKIF integration, OWL ontology",
+          "crawl_depth": 2,
+          "tags": ["ontology", "fibo", "lkif", "regulatory-compliance"]
+        },
+        {
+          "url": "https://finregont.com/reference-ontologies/",
+          "name": "FinRegOnt Reference Ontologies",
+          "description": "Reference ontologies integrated into FinRegOnt",
+          "crawl_depth": 1,
+          "tags": ["ontology", "reference"]
+        },
+        {
+          "url": "https://liquid-legal-institute.com/workinggroups/legal-ontologies-and-knowledge-graphs/",
+          "name": "Liquid Legal Institute",
+          "description": "Legal ontologies and knowledge graphs working group - open source resources",
+          "crawl_depth": 2,
+          "tags": ["legal-ontology", "knowledge-graph", "open-source"]
+        },
+        {
+          "url": "https://www.lynx-project.eu/",
+          "name": "Lynx Project",
+          "description": "EU H2020 Legal Knowledge Graph for Smart Compliance Services",
+          "crawl_depth": 2,
+          "tags": ["eu-project", "compliance", "knowledge-graph", "multilingual"]
+        }
+      ]
+    },
+    {
+      "name": "NLP & Document Processing",
+      "priority": "medium",
+      "sources": [
+        {
+          "url": "https://nlp.stanford.edu/software/",
+          "name": "Stanford NLP Software",
+          "description": "CoreNLP, Stanza, GloVe - NLP tools for document processing",
+          "crawl_depth": 2,
+          "tags": ["nlp", "stanford", "corenlp", "stanza"]
+        },
+        {
+          "url": "https://stanfordnlp.github.io/CoreNLP/",
+          "name": "CoreNLP Documentation",
+          "description": "Stanford CoreNLP documentation - Java NLP suite",
+          "crawl_depth": 3,
+          "tags": ["nlp", "documentation", "corenlp"]
+        }
+      ]
+    },
+    {
+      "name": "Industry Analysis & Guidance",
+      "priority": "medium",
+      "sources": [
+        {
+          "url": "https://www.squirepattonboggs.com/en/insights/publications/2025/05/the-quiet-revolution-of-ai-in-pensions",
+          "name": "SPB AI Pensions Analysis",
+          "description": "Squire Patton Boggs: The Quiet Revolution of AI in Pensions (May 2025)",
+          "crawl_depth": 1,
+          "tags": ["legal-analysis", "ai-pensions", "trustee-duties"]
+        },
+        {
+          "url": "https://www.pinsentmasons.com/out-law/news/ai-adoption-uk-pensions-market-benefits-risks",
+          "name": "Pinsent Masons AI Pensions",
+          "description": "AI adoption in UK pensions market - benefits and risks analysis",
+          "crawl_depth": 1,
+          "tags": ["legal-analysis", "ai-pensions", "risks"]
+        },
+        {
+          "url": "https://www.oxfordsemantic.tech/rules-and-regulation-compliance-with-knowledge-graphs-and-ai",
+          "name": "Oxford Semantic Compliance",
+          "description": "Rules and Regulation Compliance with Knowledge Graphs and AI",
+          "crawl_depth": 1,
+          "tags": ["knowledge-graph", "compliance", "enterprise"]
+        }
+      ]
+    },
+    {
+      "name": "Research Papers (PDF - manual review)",
+      "priority": "low",
+      "notes": "These are PDFs that may need manual download and processing",
+      "sources": [
+        {
+          "url": "https://rpc.cfainstitute.org/sites/default/files/docs/research-reports/pensions-in-the-age-of-artificial-intelligence_online.pdf",
+          "name": "CFA Pensions AI Report",
+          "description": "CFA Institute: Pensions in the Age of Artificial Intelligence - Genevieve Hayman",
+          "crawl_depth": 0,
+          "tags": ["pdf", "cfa", "research", "ai-governance"]
+        }
+      ]
+    }
+  ],
+  "github_repositories": [
+    {
+      "url": "https://github.com/stanfordnlp",
+      "name": "Stanford NLP GitHub",
+      "description": "Stanford NLP Group repositories - CoreNLP, Stanza, etc.",
+      "notes": "Clone key repos rather than crawl"
+    },
+    {
+      "url": "https://github.com/Liquid-Legal-Institute/Legal-Ontologies",
+      "name": "Legal Ontologies Collection",
+      "description": "Curated list of legal ontologies, data schemes, and knowledge graphs",
+      "notes": "Reference list - follow links to individual ontologies"
+    }
+  ],
+  "archon_crawl_commands": {
+    "notes": "Run these in Archon UI (http://localhost:3737) under Knowledge Base > Crawl Website",
+    "recommended_order": [
+      "finregont.com (high value ontology template)",
+      "law.stanford.edu/codex (computational law frameworks)",
+      "computationallaw.org (AI agents x law)",
+      "thepensionsregulator.gov.uk DDaT strategy pages",
+      "nlp.stanford.edu/software (NLP tools reference)"
+    ]
+  }
+}
